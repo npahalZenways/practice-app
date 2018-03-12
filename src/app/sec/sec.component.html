@@ -1,7 +1,11 @@
-<p>
+<!-- template referrence varible -->
+
+<p #mypara>
   sec works!
 </p>
 <p>
-  Received input: {{output}}
+  Received input: {{input ? input : 'input not received'}}
 </p>
-<button (click)="myoutput.emit(output)">send output</button>
+<button (click)="sendOutput()">send output</button>
+
+<button (click)="printThis(mypara.innerHTML)">Click</button>

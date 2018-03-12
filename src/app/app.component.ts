@@ -20,7 +20,7 @@ export class AppComponent {
   }
   print(e){
     console.log(e)
-    this.mypromise(this.title).then(res=>console.log(res)).catch(err=>console.log(err));
+    // this.mypromise(this.title).then(res=>console.log(res)).catch(err=>console.log(err));
   }
   output(e){
     console.log(e);

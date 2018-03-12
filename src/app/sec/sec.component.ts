@@ -1,19 +1,35 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-sec',
+  selector: 'sec',
   templateUrl: './sec.component.html',
   styleUrls: ['./sec.component.css'],
-  // inputs: ['id:nameOfApp']
+  // inputs: ['abc']
+  outputs: ['abcChange']
 })
 export class SecComponent implements OnInit {
-  // property decorator
-  @Input() output;
-  // id;
-  @Output('outputChange') myoutput = new EventEmitter();
-  constructor() { }
+
+  @Input('abc') input;
+  abcChange = new EventEmitter();
+  
+  @ViewChild('mypara') para;
+
+  api1(){
+    let abc = 'hello';
+    console.log(abc)
+  }
+
+  sendOutput(){
+    this.abcChange.emit('new color');
+  }
+
+  printThis(p){
+    // console.log(p)
+    console.log(this.para);
+  }
 
   ngOnInit() {
+    this.api1();
   }
 
 }

@@ -13,4 +13,4 @@
 <!-- Two way binding -->
 <input type="text" [(ngModel)]="title">
 
-<app-sec [(output)]="title"></app-sec>
+<sec [abc]="color" (abcChange)="print($event)"></sec>
