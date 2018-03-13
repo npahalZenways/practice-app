@@ -1,28 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from "@angular/router";
+import { LoginService } from "./login.service";
 
 @Component({
   selector: 'root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'app';
-  color = 'red';
-  istrue = true;
-  mypromise(title){
-    return new Promise(function(resolve, reject){
-      if(title == 'app'){
-        resolve('resolved');
-      } else{
-        reject('rejected');
-      }
-    })
+export class AppComponent implements OnInit{
+
+  constructor(private r:Router, private ar: ActivatedRoute, private login:LoginService){
+
   }
-  print(e){
-    console.log(e)
-    // this.mypromise(this.title).then(res=>console.log(res)).catch(err=>console.log(err));
+  routeToChild(){
+    this.r.navigate(['/sec/childmodule/comp'])
   }
-  output(e){
-    console.log(e);
+
+  changetext(){
+    this.login.mytext = 'text changed from app'
+  }
+  ngOnInit(){
+    setInterval(()=>{
+      console.log('from app', this.login.mytext)
+    },2000)
   }
 }

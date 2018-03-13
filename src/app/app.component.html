@@ -1,16 +1,5 @@
-<!-- Data-binding -->
+<button (click)="routeToChild()">Home</button>
+<button routerLink="/sec" routerLinkActive="active">Sec</button>
 
-<!-- One-way binding -->
-<!-- Interpolation -->
-{{ title }}
-
-<!-- Property binding -->
-<p [class]="title" [class.myclass]="istrue" [class.newclass]="istrue">This is a paragraph</p>
-
-<!-- Event binding -->
-<button (keypress)="title='app'; print($event)">Click</button>
-
-<!-- Two way binding -->
-<input type="text" [(ngModel)]="title">
-
-<sec [abc]="color" (abcChange)="print($event)"></sec>
+<router-outlet></router-outlet>
+<button (click)="changetext()">Change app</button>

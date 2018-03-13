@@ -1,11 +1,5 @@
-<!-- template referrence varible -->
-
-<p #mypara>
-  sec works!
-</p>
 <p>
-  Received input: {{input ? input : 'input not received'}}
+  Sec works
 </p>
-<button (click)="sendOutput()">send output</button>
-
-<button (click)="printThis(mypara.innerHTML)">Click</button>
+<router-outlet></router-outlet>
+<button (click)="changetext()">Change sec</button>
