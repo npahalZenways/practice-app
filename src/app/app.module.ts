@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule, Route } from "@angular/router";
 import { ErrorComponent } from './error/error.component';
 import { LoginService } from "./login.service";
+import { HttpModule } from "@angular/http";
 
 const myroutes: Route[] = [{
 
@@ -40,11 +41,12 @@ const myroutes: Route[] = [{
     },{
       path: '**',
       component: ErrorComponent
-    }])
+    }]),
+    HttpModule
   ],
   providers: [
     // services
-    LoginService
+    LoginService,
   ],
   bootstrap: [AppComponent]
 })
